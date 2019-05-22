@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder , FormGroup , Validators} from '@angular/forms';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-form-register',
@@ -7,30 +8,31 @@ import { FormBuilder , FormGroup , Validators} from '@angular/forms';
   styles: []
 })
 export class FormRegisterComponent implements OnInit {
-
+  @Output() formSubmit = new EventEmitter()
   public formData: FormGroup;
 
   constructor( private FormBuilder: FormBuilder) { }
    
   private resetForm = () => {
     this.formData = this.FormBuilder.group({
-      first_name: [ '' , Validators.required ],
-      last_name: [ '' , Validators.required ],
-      email: [ '' , Validators.required ],
-      password: [ '' , Validators.required ],
-      password_repeate: [ '' , Validators.required ],
-      street: [ '' , Validators.required ],
-      city: [ '' , Validators.required ],
-      country: [ '' , Validators.required ],
-      birthdate: [ '' , Validators.required ],
+      first_name: [ 'dd' , Validators.required ],
+      last_name: [ 'dd' , Validators.required ],
+      email: [ 'dd@dd.com' , Validators.required, Validators.email ],
+      password: [ 'dd' , Validators.required ],
+      password_repeate: [ 'dd' , Validators.required ],
+      street: [ 'dd' , Validators.required ],
+      city: [ 'dd' , Validators.required ],
+      country: [ 'dd' , Validators.required ],
+      zip_code: ['13100', Validators.required],
+      birthdate: [ '18/08/1979' , Validators.required ],
       position: [ 'NULL' , Validators.required ],
-      profil: [ 'Merchant' , Validators.required ],
-      cgu: [  false, Validators.required],
+      type: ['Merchant', Validators.required],
+      cgu: [  true, Validators.required],
     })
   }
 
   private submitForm = () => {
-    console.log('submit')
+    this.formSubmit.emit(this.formData.value);
   }
 
   ngOnInit() {

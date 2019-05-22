@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* Colors */
+
+.alimentation{
+    color: red;
+} 
+
+.services{
+    color: blue;
+}
+
+.beaute--sante-et-bien-etre{
+    color: purple;
+}
+
+.restauration{
+    color: yellow;
+}
+
+.maison-et-deco{
+    color: blueviolet;
+}
+
+.loisirs-et-divertissements{
+    color: brown;
+}
+
+/* Display */
+
+ul.categories-collection li {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 15px;
+    border: .1rem solid grey;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+ul.categories-collection li.active{
+    color: white;
+    background-color: grey;
+}
+
+ul.categories-collection li:not(:last-of-type){
+    margin-right: 1rem;
+}

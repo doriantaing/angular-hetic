@@ -9,7 +9,6 @@ Imports
     // Inner
     import { RegisterPageComponent } from './register-page.component';
     import { Routing } from "./router";
-
     import { FormRegisterComponent } from '../../components/form-register/form-register.component';
 //
 
