@@ -13,9 +13,8 @@ export class AppComponent implements OnInit {
 
   public appTitle: string;
 
-  constructor(){
-    this.appTitle = `Hello Stranger`
+  constructor() {
+    this.appTitle = `Angular hetic`;
   }
-    
-  ngOnInit(){}
+  ngOnInit() {}
 }

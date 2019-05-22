@@ -1,30 +1,34 @@
 /* Colors */
 
 .alimentation{
-    color: red;
+    color: #B14145;
 } 
 
 .services{
-    color: blue;
+    color: #2E6095;
 }
 
 .beaute--sante-et-bien-etre{
-    color: purple;
+    color: #FF7677;
 }
 
 .restauration{
-    color: yellow;
+    color: #FFB838;
 }
 
 .maison-et-deco{
-    color: blueviolet;
+    color: #3FA8B3;
 }
 
 .loisirs-et-divertissements{
-    color: brown;
+    color: #AED75D;
 }
 
 /* Display */
+
+ul.categories-collection{
+  margin: 50px 40px 20px;
+}
 
 ul.categories-collection li {
     display: inline-block;
@@ -40,8 +44,53 @@ ul.categories-collection li {
 ul.categories-collection li.active{
     color: white;
     background-color: grey;
+    opacity: .7;
+    transition: .5s;
 }
 
 ul.categories-collection li:not(:last-of-type){
     margin-right: 1rem;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #FEE5A5;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #486D87;
+  text-transform: uppercase;
+}
+
+.header > nav ul {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header > nav ul li{
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.header > nav ul li:not(:last-child){
+  margin-right: 1.5rem;
+}
+
+.header > nav ul li a {
+  color: #486D87;
+}
+
+.customers-card{
+  display: inline-block;
+}
+
+.customers-collection li{
+  list-style: none;
+  padding: 20px 40px;
 }

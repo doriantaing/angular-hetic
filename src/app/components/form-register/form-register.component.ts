@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder , FormGroup , Validators} from '@angular/forms';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-form-register',
@@ -8,16 +7,15 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styles: []
 })
 export class FormRegisterComponent implements OnInit {
-  @Output() formSubmit = new EventEmitter()
+  @Output() formSubmit = new EventEmitter();
   public formData: FormGroup;
 
   constructor( private FormBuilder: FormBuilder) { }
-   
   private resetForm = () => {
     this.formData = this.FormBuilder.group({
       first_name: [ 'dd' , Validators.required ],
       last_name: [ 'dd' , Validators.required ],
-      email: [ 'dd@dd.com' , Validators.required, Validators.email ],
+      email: [ 'dd@dd.com' , Validators.required],
       password: [ 'dd' , Validators.required ],
       password_repeate: [ 'dd' , Validators.required ],
       street: [ 'dd' , Validators.required ],
@@ -28,7 +26,7 @@ export class FormRegisterComponent implements OnInit {
       position: [ 'NULL' , Validators.required ],
       type: ['Merchant', Validators.required],
       cgu: [  true, Validators.required],
-    })
+    });
   }
 
   private submitForm = () => {

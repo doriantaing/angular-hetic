@@ -8,7 +8,7 @@
   ></li>
 </ul>
 
-<ul *ngIf="customersCollection">
+<ul *ngIf="customersCollection" class="customers-collection">
   <li *ngFor="let item of customersCollection">
     <app-customers-card [customers]='item' [class]="item.category.slug"></app-customers-card>
   </li>
